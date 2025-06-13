@@ -1,98 +1,40 @@
-Raspberry Pi-Based Digital Dash & ECU Tuning Interface for a Race Car
-
+Raspberry Pi-Based Digital Dash & ECU Tuning Interface for a Race Car https://averyizatt.com/custom-car-stereo-with-tuning-integration/
 This project transforms a Raspberry Pi into a powerful, multifunctional infotainment and tuning system for my 1989 Foxbody Mustang race car. It replicates the functionality of expensive standalone systems using open-source tools and custom hardware integration, all on a budget.
 
 Overview
-
 An open-source Android Auto emulator, OpenAuto, was adapted to operate in a race car environment. It provides:
 
 A full graphical interface for music and navigation
-
 Real-time tuning access to the ECU using TunerStudio
-
 Rear camera integration
-
 Audio output is routed through a compact 12V amplifier module connected to the factory speaker system. The result is a seamless, feature-rich digital dash system comparable to commercial race car solutions.
 
 Key Features
-
 TunerStudio IntegrationThe Pi connects to a Microsquirt V3 ECU via USB. TunerStudio runs locally for real-time engine monitoring, logging, and tuning.
-
 OpenAuto InterfaceOpenAuto is used as a driver-friendly infotainment system. It's customizable and supports touch input.
-
 Rear Camera SupportA CSI camera module (e.g. IMX219) streams live video using libcamera-vid and ffplay. A GPIO pin triggers the camera feed (e.g. reverse gear logic).
-
 Graceful Shutdown LogicA 12V relay and 5V delay relay ensure safe shutdown when ignition is turned off. The Pi detects ACC loss via GPIO and shuts down cleanly, preventing SD corruption.
-
 Audio IntegrationA compact amplifier module drives the car speakers with the Pi's audio output.
 
 Bill of Materials (BOM)
 
-Item
 
-Description
-
-Notes
 
 Raspberry Pi 4 (2GB+)
-
-Main computer
-
-Runs OpenAuto + TunerStudio
-
 MicroSD Card (32GB+)
-
-Storage for OS and apps
-
-Use high-endurance model
-
 12V to 5V Buck Converter
-
 Pi power supply
-
-Feeds through delay relay
-
 12V Relay
-
-Detects ignition state (ACC)
-
-ACC connected to pin 85
-
 5V Time Delay Relay Module
-
-Holds power for shutdown sequence
-
-Triggered by Pi GPIO
-
 Compact Audio Amplifier
-
-Drives factory speakers
-
-Powered by car's 12V system
-
 Rear Camera (IMX219 or similar)
-
-CSI camera module
-
-Connected via libcamera
-
 HDMI/DSI Display
-
-Dash-mounted screen
-
 Touch or non-touch display
-
 USB GPS (optional)
-
 Adds GPS logging
-
 Useful for nav or TunerStudio logs
-
 Misc Wiring/Fuses
 
-For all power, GPIO, AV connections
-
-Include fuse for Pi power and VREF lines
 
 How It Works
 
